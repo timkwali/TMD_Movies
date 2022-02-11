@@ -4,7 +4,8 @@
     android:layout_width="150dp"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:layout_marginEnd="8dp">
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="5dp">
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="200dp"
@@ -29,10 +30,9 @@
     <TextView
         android:id="@+id/category_rating_tv"
         style="@style/rating"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="5dp"
         app:drawableStartCompat="@drawable/ic_round_star_24" />
 </LinearLayout>

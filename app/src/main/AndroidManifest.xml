@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TMDMovies">
         <activity
-            android:name=".MainActivity"
+            android:name=".common.presentation.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

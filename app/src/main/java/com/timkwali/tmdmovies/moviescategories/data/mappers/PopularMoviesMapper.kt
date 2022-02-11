@@ -11,7 +11,7 @@ class PopularMoviesMapper: DomainMapper<PopularMovie, Movie> {
             title = entity.title,
             rating = entity.voteAverage,
             image = entity.posterPath,
-            genres = entity.genreIds,
+//            genres = entity.genreIds,
             releaseDate = entity.releaseDate,
             language = entity.originalLanguage,
             description = entity.overview,

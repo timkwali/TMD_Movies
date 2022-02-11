@@ -2,6 +2,7 @@ package com.timkwali.tmdmovies.common.di
 
 import com.timkwali.tmdmovies.BuildConfig
 import com.timkwali.tmdmovies.common.data.api.MoviesApi
+import com.timkwali.tmdmovies.common.data.cache.MoviesDatabase
 import com.timkwali.tmdmovies.common.data.repository.MoviesRepositoryImpl
 import com.timkwali.tmdmovies.common.domain.repository.MoviesRepository
 import com.timkwali.tmdmovies.common.utils.Constants
@@ -70,7 +71,7 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideMoviesRepository(moviesApi: MoviesApi): MoviesRepository {
-        return MoviesRepositoryImpl(moviesApi)
+    fun provideMoviesRepository(moviesApi: MoviesApi, moviesDb: MoviesDatabase): MoviesRepository {
+        return MoviesRepositoryImpl(moviesApi, moviesDb)
     }
 }

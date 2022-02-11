@@ -1,7 +1,8 @@
-package com.timkwali.tmdmovies
+package com.timkwali.tmdmovies.common.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.timkwali.tmdmovies.R
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

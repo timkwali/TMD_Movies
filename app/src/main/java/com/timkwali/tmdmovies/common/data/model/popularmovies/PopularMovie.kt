@@ -5,9 +5,10 @@ import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+import com.timkwali.tmdmovies.common.utils.Constants
 import kotlinx.parcelize.Parcelize
 
-@Entity
+@Entity(tableName = Constants.POPULAR_MOVIES_TABLE)
 @Parcelize
 data class PopularMovie(
     @PrimaryKey
@@ -17,8 +18,8 @@ data class PopularMovie(
     val adult: Boolean?,
     @SerializedName("backdrop_path")
     val backdropPath: String?,
-    @SerializedName("genre_ids")
-    val genreIds: List<Int>?,
+//    @SerializedName("genre_ids")
+//    val genreIds: List<Int>?,
     @SerializedName("original_language")
     val originalLanguage: String?,
     @SerializedName("original_title")

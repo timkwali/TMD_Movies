@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.timkwali.tmdmovies.moviescategories.domain.model.Movie
 import com.timkwali.tmdmovies.common.utils.OnItemClick
+import com.timkwali.tmdmovies.common.utils.Resource
 import com.timkwali.tmdmovies.databinding.FragmentMoviesCategoriesBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -34,8 +35,22 @@ class MoviesCategoriesFragment : Fragment(), OnItemClick<Movie> {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
             moviesCategoriesViewModel.popularMovies.observe(viewLifecycleOwner, {
-                setUpRecyclerView(popularMoviesRv, it)
+                handleResponse(it, popularMoviesRv)
             })
+        }
+    }
+
+    private fun handleResponse(resource: Resource<List<Movie>>, recyclerView: RecyclerView) {
+        when(resource) {
+            is Resource.Loading -> {
+                Toast.makeText(requireContext(), "Loading", Toast.LENGTH_SHORT).show()
+            }
+            is Resource.Success -> resource.data?.let { it ->
+                setUpRecyclerView(recyclerView, it)
+            }
+            is Resource.Error -> {
+                Toast.makeText(requireContext(), "Error Occured", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
