@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.timkwali.tmdmovies.R
-import com.timkwali.tmdmovies.common.domain.Movie
+import com.timkwali.tmdmovies.moviescategories.domain.model.Movie
 import com.timkwali.tmdmovies.common.utils.OnItemClick
 import com.timkwali.tmdmovies.databinding.MovieCategoryItemBinding
 

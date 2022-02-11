@@ -18,6 +18,11 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        Properties properties = new Properties()
+        properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+        buildConfigField "String", "API_KEY", "${properties.getProperty('API_KEY')}"
     }
 
     buildTypes {
@@ -64,6 +69,7 @@ dependencies {
 
     // LiveData
     implementation 'androidx.lifecycle:lifecycle-livedata:2.3.1'
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0"
 
     // Hilt
     implementation 'com.google.dagger:hilt-android:2.35'

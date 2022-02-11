@@ -6,10 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.timkwali.tmdmovies.R
-import com.timkwali.tmdmovies.common.domain.Movie
+import com.timkwali.tmdmovies.moviescategories.domain.model.Movie
 import com.timkwali.tmdmovies.common.utils.OnItemClick
 import com.timkwali.tmdmovies.databinding.FragmentMoviesCategoriesBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -17,10 +17,9 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MoviesCategoriesFragment : Fragment(), OnItemClick<Movie> {
 
-    val image = "https://images.wallpapersden.com/image/download/spider-man-no-way-home-hd-poster_bWVsamuUmZqaraWkpJRobWllrWdma2VnZWZubGdt.jpg"
-
     private var _binding: FragmentMoviesCategoriesBinding? = null
     private val binding get() = _binding!!
+    private val moviesCategoriesViewModel: MoviesCategoriesViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,15 +32,14 @@ class MoviesCategoriesFragment : Fragment(), OnItemClick<Movie> {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         binding.apply {
-            setUpRecyclerView(latestMoviesRv)
-            setUpRecyclerView(popularMoviesRv)
-            setUpRecyclerView(upcomingMoviesRv)
+            moviesCategoriesViewModel.popularMovies.observe(viewLifecycleOwner, {
+                setUpRecyclerView(popularMoviesRv, it)
+            })
         }
     }
 
-    private fun setUpRecyclerView(recyclerView: RecyclerView) {
+    private fun setUpRecyclerView(recyclerView: RecyclerView, moviesList: List<Movie>) {
         val adapter = MovieCategoryRvAdapter(moviesList, this)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(
@@ -51,25 +49,12 @@ class MoviesCategoriesFragment : Fragment(), OnItemClick<Movie> {
         recyclerView.setHasFixedSize(true)
     }
 
-    private val moviesList = listOf(
-        Movie("Spiderman: No way home", "9.1", image),
-        Movie("Spiderman: No way home", "9.1", image),
-        Movie("Spiderman: No way home", "9.1", image),
-        Movie("Spiderman: No way home", "9.1", image),
-        Movie("Spiderman: No way home", "9.1", image),
-        Movie("Spiderman: No way home", "9.1", image),
-        Movie("Spiderman: No way home", "9.1", image),
-        Movie("Spiderman: No way home", "9.1", image),
-        Movie("Spiderman: No way home", "9.1", image),
-        Movie("Spiderman: No way home", "9.1", image),
-    )
+    override fun onItemClick(item: Movie, position: Int) {
+        Toast.makeText(requireContext(), item.title, Toast.LENGTH_SHORT).show()
+    }
 
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
-    }
-
-    override fun onItemClick(item: Movie, position: Int) {
-        Toast.makeText(requireContext(), item.title, Toast.LENGTH_SHORT).show()
     }
 }
