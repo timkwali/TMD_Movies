@@ -1,17 +1,24 @@
 package com.timkwali.tmdmovies.common.data.model.popularmovies
 
 
+import android.os.Parcelable
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
-data class Result(
+@Entity
+@Parcelize
+data class PopularMovie(
+    @PrimaryKey
+    @SerializedName("id")
+    val id: Int?,
     @SerializedName("adult")
     val adult: Boolean?,
     @SerializedName("backdrop_path")
     val backdropPath: String?,
     @SerializedName("genre_ids")
     val genreIds: List<Int>?,
-    @SerializedName("id")
-    val id: Int?,
     @SerializedName("original_language")
     val originalLanguage: String?,
     @SerializedName("original_title")
@@ -32,4 +39,4 @@ data class Result(
     val voteAverage: Double?,
     @SerializedName("vote_count")
     val voteCount: Int?
-)
+) : Parcelable
