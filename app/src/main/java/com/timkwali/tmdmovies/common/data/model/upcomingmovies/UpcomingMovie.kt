@@ -1,4 +1,4 @@
-package com.timkwali.tmdmovies.common.data.model.popularmovies
+package com.timkwali.tmdmovies.common.data.model.upcomingmovies
 
 
 import androidx.room.Entity
@@ -6,8 +6,8 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import com.timkwali.tmdmovies.common.utils.Constants
 
-@Entity(tableName = Constants.POPULAR_MOVIES_TABLE)
-data class PopularMovie(
+@Entity(tableName = Constants.UPCOMING_MOVIES_TABLE)
+data class UpcomingMovie(
     @PrimaryKey
     @SerializedName("id")
     val id: Int?,

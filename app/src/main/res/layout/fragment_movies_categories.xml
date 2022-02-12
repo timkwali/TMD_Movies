@@ -64,11 +64,38 @@
                 android:id="@+id/latest_movies_rv"
                 style="@style/category_rv"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="280dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/latest_movies_tv" />
+
+            <LinearLayout
+                android:id="@+id/latest_retry_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/latest_movies_rv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/latest_movies_rv">
+
+                <TextView
+                    android:id="@+id/latest_error_tv"
+                    style="@style/rating"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/latest_retry_tv"
+                    style="@style/retry"
+                    android:text="@string/retry"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
 
             <ProgressBar
                 android:id="@+id/latest_pb"
@@ -116,11 +143,38 @@
                 android:id="@+id/popular_movies_rv"
                 style="@style/category_rv"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="280dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/popular_movies_tv" />
+
+            <LinearLayout
+                android:id="@+id/popular_retry_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/popular_movies_rv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/popular_movies_rv">
+
+                <TextView
+                    android:id="@+id/popular_error_tv"
+                    style="@style/rating"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/popular_retry_tv"
+                    style="@style/retry"
+                    android:text="@string/retry"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/upcoming_movies_tv"
@@ -146,8 +200,8 @@
                 android:id="@+id/upcoming_pb"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:visibility="gone"
                 android:indeterminateTint="@color/orange"
+                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -158,11 +212,38 @@
                 android:id="@+id/upcoming_movies_rv"
                 style="@style/category_rv"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="280dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/upcoming_movies_tv" />
+
+            <LinearLayout
+                android:id="@+id/upcoming_retry_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/upcoming_movies_rv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/upcoming_movies_rv">
+
+                <TextView
+                    android:id="@+id/upcoming_error_tv"
+                    style="@style/rating"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/upcoming_retry_tv"
+                    style="@style/retry"
+                    android:text="@string/retry"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 </LinearLayout>

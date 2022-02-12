@@ -9,5 +9,16 @@
         android:id="@+id/moviesCategoriesFragment"
         android:name="com.timkwali.tmdmovies.moviescategories.presentation.MoviesCategoriesFragment"
         android:label="fragment_movies_categories"
-        tools:layout="@layout/fragment_movies_categories" />
+        tools:layout="@layout/fragment_movies_categories" >
+    </fragment>
+    <fragment
+        android:id="@+id/movieDetailsFragment"
+        android:name="com.timkwali.tmdmovies.moviedetails.presentation.MovieDetailsFragment"
+        android:label="fragment_movie_details"
+        tools:layout="@layout/fragment_movie_details" />
+    <fragment
+        android:id="@+id/moviesListFragment"
+        android:name="com.timkwali.tmdmovies.movieslist.presenter.MoviesListFragment"
+        android:label="fragment_movies_list"
+        tools:layout="@layout/fragment_movies_list" />
 </navigation>

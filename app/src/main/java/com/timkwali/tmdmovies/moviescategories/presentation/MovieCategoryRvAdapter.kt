@@ -3,26 +3,23 @@ package com.timkwali.tmdmovies.moviescategories.presentation
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.timkwali.tmdmovies.R
-import com.timkwali.tmdmovies.moviescategories.domain.model.Movie
+import com.timkwali.tmdmovies.common.utils.Constants
 import com.timkwali.tmdmovies.common.utils.OnItemClick
+import com.timkwali.tmdmovies.common.utils.Utils.loadImage
 import com.timkwali.tmdmovies.databinding.MovieCategoryItemBinding
+import com.timkwali.tmdmovies.moviescategories.domain.model.Movie
 
-class MovieCategoryRvAdapter(val moviesList: List<Movie>, val listener: OnItemClick<Movie>):
+class MovieCategoryRvAdapter(private val moviesList: List<Movie>, private val listener: OnItemClick<Movie>):
     RecyclerView.Adapter<MovieCategoryRvAdapter.MovieCategoryViewHolder>() {
 
     inner class MovieCategoryViewHolder(private val binding: MovieCategoryItemBinding):
         RecyclerView.ViewHolder(binding.root) {
         fun bind(movie: Movie, action: OnItemClick<Movie>) {
             binding.apply {
+                val imageUrl = Constants.IMAGE_URL + movie.image
+                categoryMovieImageIv.loadImage(imageUrl)
                 categoryMovieTitleTv.text = movie.title
                 categoryRatingTv.text = "${movie.rating}/10.0 TMDB"
-                Glide.with(categoryMovieImageIv)
-                    .load(movie.image)
-                    .placeholder(R.drawable.ic_round_camera)
-                    .error(R.drawable.tmd_logo)
-                    .into(categoryMovieImageIv)
             }
             itemView.setOnClickListener {
                 action.onItemClick(movie, adapterPosition)

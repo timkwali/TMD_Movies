@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/category_movie_image_cv"
+        android:layout_width="150dp"
+        android:layout_height="180dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:id="@+id/category_movie_image_iv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"/>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/movie_name_tv"
+        style="@style/movie_title_category"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/category_movie_image_cv"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/rating_tv"
+        style="@style/rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="5dp"
+        app:drawableStartCompat="@drawable/ic_round_star_24"
+        app:layout_constraintStart_toEndOf="@+id/category_movie_image_cv"
+        app:layout_constraintTop_toBottomOf="@+id/movie_name_tv" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/genres_cg"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxHeight="50dp"
+        android:layout_marginStart="10dp"
+        android:orientation="horizontal"
+        android:maxLines="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/category_movie_image_cv"
+        app:layout_constraintTop_toBottomOf="@+id/rating_tv" />
+
+    <TextView
+        android:id="@+id/release_date_tv"
+        style="@style/detail_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="5dp"
+        android:gravity="center"
+        app:layout_constraintStart_toEndOf="@+id/category_movie_image_cv"
+        app:layout_constraintTop_toBottomOf="@+id/genres_cg"
+        app:drawableStartCompat="@drawable/ic_round_calendar_month_24" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
