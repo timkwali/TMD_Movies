@@ -33,7 +33,7 @@ data class LatestMoviesResponse(
     @SerializedName("popularity")
     val popularity: Int?,
     @SerializedName("poster_path")
-    val posterPath: String?,
+    var posterPath: String?,
     @SerializedName("production_companies")
     val productionCompanies: List<ProductionCompanies>,
     @SerializedName("production_countries")

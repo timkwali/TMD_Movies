@@ -1,5 +1,6 @@
 package com.timkwali.tmdmovies.moviescategories.presentation
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -14,6 +15,9 @@ import com.timkwali.tmdmovies.common.utils.MovieType
 import com.timkwali.tmdmovies.common.utils.Resource
 import com.timkwali.tmdmovies.moviescategories.domain.usecase.GetMoviesCategory
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.MainCoroutineDispatcher
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -45,18 +49,26 @@ class MoviesCategoriesViewModel @Inject constructor(
 
 
     fun getLatestMovies()  = viewModelScope.launch {
-        getMoviesCategory(MovieType.LATEST).collect { _latestMovies.value = it }
+        getMoviesCategory(MovieType.LATEST).collect {
+            _latestMovies.value = it
+        }
     }
 
     fun getPopularMovies() = viewModelScope.launch {
-        getMoviesCategory(MovieType.POPULAR).collect{ _popularMovies.value = it }
+        getMoviesCategory(MovieType.POPULAR).collect{
+            _popularMovies.value = it
+        }
     }
 
     fun getUpcomingMovies() = viewModelScope.launch {
-        getMoviesCategory(MovieType.UPCOMING).collect { _upcomingMovies.value = it }
+        getMoviesCategory(MovieType.UPCOMING).collect {
+            _upcomingMovies.value = it
+        }
     }
 
     fun getMoviesGenres() = viewModelScope.launch {
-        getGenres().collect { _moviesGenres.value = it }
+        getGenres().collect {
+            _moviesGenres.value = it
+        }
     }
 }

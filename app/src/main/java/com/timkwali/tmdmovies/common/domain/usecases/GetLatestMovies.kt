@@ -16,6 +16,9 @@ class GetLatestMovies @Inject constructor(
         query = {
             repository.getDbLatestMovies().map {
                 it.map { latestMovie ->
+                    if(latestMovie.adult == true) {
+                        latestMovie.posterPath = ""
+                    }
                     LatestMoviesMapper().mapToDomain(latestMovie)
                 }
             }

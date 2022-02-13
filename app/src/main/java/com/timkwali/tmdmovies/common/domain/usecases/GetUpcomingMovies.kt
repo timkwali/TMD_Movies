@@ -15,8 +15,11 @@ class GetUpcomingMovies @Inject constructor(
     operator fun invoke(): Flow<Resource<List<Movie>>> = networkBoundResource(
         query = {
             repository.getDbUpcomingMovies().map {
-                it.map { upcomingMovies ->
-                    UpcomingMoviesMapper().mapToDomain(upcomingMovies)
+                it.map { upcomingMovie ->
+                    if(upcomingMovie.adult == true) {
+                        upcomingMovie.posterPath = ""
+                    }
+                    UpcomingMoviesMapper().mapToDomain(upcomingMovie)
                 }
             }
         },

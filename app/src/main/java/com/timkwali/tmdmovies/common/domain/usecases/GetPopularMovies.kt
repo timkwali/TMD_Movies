@@ -17,6 +17,9 @@ class GetPopularMovies @Inject constructor(
         query = {
             repository.getDbPopularMovies().map {
                 it.map { popularMovie ->
+                    if(popularMovie.adult == true) {
+                        popularMovie.posterPath = ""
+                    }
                     PopularMoviesMapper().mapToDomain(popularMovie)
                 }
             }
