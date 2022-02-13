@@ -7,29 +7,25 @@
     android:orientation="vertical"
     tools:context=".moviescategories.presentation.MoviesCategoriesFragment">
     <LinearLayout
-        android:id="@+id/moviesCategories_header_ll"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginHorizontal="16dp">
+        android:layout_height="wrap_content">
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/tmd_logo_iv"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/tmd_logo"
             android:layout_marginTop="5dp"
+            android:layout_marginStart="18dp"
             app:shapeAppearanceOverlay="@style/round_image_white_bg"/>
 
-        <TextView
-            android:id="@+id/app_name_tv"
-            style="@style/heading"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:layout_weight="1"
-            android:layout_gravity="center"
-            android:gravity="center"/>
+        <include
+            android:id="@+id/tool"
+            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:layout_marginTop="5dp"
+            layout="@layout/gen_toolbar" />
     </LinearLayout>
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

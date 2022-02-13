@@ -16,7 +16,7 @@ data class UpcomingMovie(
     @SerializedName("backdrop_path")
     val backdropPath: String?,
     @SerializedName("genre_ids")
-    val genreIds: List<String>?,
+    val genreIds: List<Int>?,
     @SerializedName("original_language")
     val originalLanguage: String?,
     @SerializedName("original_title")

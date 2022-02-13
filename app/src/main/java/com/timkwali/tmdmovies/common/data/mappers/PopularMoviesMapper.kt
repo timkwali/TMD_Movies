@@ -1,12 +1,11 @@
-package com.timkwali.tmdmovies.moviescategories.data.mappers
+package com.timkwali.tmdmovies.common.data.mappers
 
 import com.timkwali.tmdmovies.common.data.model.popularmovies.PopularMovie
-import com.timkwali.tmdmovies.common.data.model.upcomingmovies.UpcomingMovie
 import com.timkwali.tmdmovies.common.utils.DomainMapper
-import com.timkwali.tmdmovies.moviescategories.domain.model.Movie
+import com.timkwali.tmdmovies.common.domain.model.Movie
 
-class UpcomingMoviesMapper: DomainMapper<UpcomingMovie, Movie> {
-    override fun mapToDomain(entity: UpcomingMovie): Movie {
+class PopularMoviesMapper: DomainMapper<PopularMovie, Movie> {
+    override fun mapToDomain(entity: PopularMovie): Movie {
         return Movie(
             id = entity.id,
             title = entity.title,

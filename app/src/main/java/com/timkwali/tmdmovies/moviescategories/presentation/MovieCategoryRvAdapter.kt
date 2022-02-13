@@ -7,7 +7,7 @@ import com.timkwali.tmdmovies.common.utils.Constants
 import com.timkwali.tmdmovies.common.utils.OnItemClick
 import com.timkwali.tmdmovies.common.utils.Utils.loadImage
 import com.timkwali.tmdmovies.databinding.MovieCategoryItemBinding
-import com.timkwali.tmdmovies.moviescategories.domain.model.Movie
+import com.timkwali.tmdmovies.common.domain.model.Movie
 
 class MovieCategoryRvAdapter(private val moviesList: List<Movie>, private val listener: OnItemClick<Movie>):
     RecyclerView.Adapter<MovieCategoryRvAdapter.MovieCategoryViewHolder>() {
@@ -19,7 +19,7 @@ class MovieCategoryRvAdapter(private val moviesList: List<Movie>, private val li
                 val imageUrl = Constants.IMAGE_URL + movie.image
                 categoryMovieImageIv.loadImage(imageUrl)
                 categoryMovieTitleTv.text = movie.title
-                categoryRatingTv.text = "${movie.rating}/10.0 TMDB"
+                categoryRatingTv.text = "${movie.rating}/10.0 IMDB"
             }
             itemView.setOnClickListener {
                 action.onItemClick(movie, adapterPosition)

@@ -36,7 +36,7 @@ object Utils {
     fun ImageView.loadImage(url: String) {
         Glide.with(this.context)
             .load(url)
-            .placeholder(R.drawable.ic_round_camera)
+            .placeholder(R.drawable.tmd_logo)
             .error(R.drawable.tmd_logo)
             .into(this)
     }
@@ -44,12 +44,12 @@ object Utils {
     fun ChipGroup.addChips(tags: List<String>, setLimit: Boolean) {
         this.removeAllViews()
         var numOfChips = 0
-        val limit = if(setLimit) 4 else Int.MAX_VALUE
+        val limit = if(setLimit) 3 else Int.MAX_VALUE
         tags.forEach { tag ->
             if(tag.isNotEmpty() && numOfChips < limit) {
                 val newChip = Chip(this.context)
                 newChip.apply {
-                    chipStrokeWidth = 1F
+//                    chipStrokeWidth = 1F
                     chipStrokeColor = ColorStateList.valueOf(resources.getColor(R.color.blue))
                     chipBackgroundColor = ColorStateList.valueOf(resources.getColor(R.color.light_blue))
                     text = tag
@@ -61,10 +61,10 @@ object Utils {
         }
     }
 
-    fun genreIdsToGenreNames(genreIds: List<String>, genres: List<Genre>): List<String> {
+    fun getGenreNameFromId(genreIds: List<Int>, genres: List<Genre>): List<String> {
         val movieGenres = mutableListOf<String>()
         genres.forEach { genre ->
-            if(genreIds.contains(genre.id.toString())) {
+            if(genreIds.contains(genre.id)) {
                 movieGenres.add(genre.name.toString())
             }
         }

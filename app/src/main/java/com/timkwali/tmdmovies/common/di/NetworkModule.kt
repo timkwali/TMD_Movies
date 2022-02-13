@@ -37,9 +37,9 @@ object NetworkModule {
         logger: HttpLoggingInterceptor
     ): OkHttpClient {
         return OkHttpClient.Builder()
-            .connectTimeout(30L, TimeUnit.SECONDS)
-            .readTimeout(30L, TimeUnit.SECONDS)
-            .writeTimeout(30L, TimeUnit.SECONDS)
+            .connectTimeout(10L, TimeUnit.SECONDS)
+            .readTimeout(10L, TimeUnit.SECONDS)
+            .writeTimeout(10L, TimeUnit.SECONDS)
             .addInterceptor(logger)
             .build()
     }

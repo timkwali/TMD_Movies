@@ -6,11 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.timkwali.tmdmovies.R
 import com.timkwali.tmdmovies.common.utils.Constants
 import com.timkwali.tmdmovies.common.utils.Utils.addChips
 import com.timkwali.tmdmovies.common.utils.Utils.loadImage
 import com.timkwali.tmdmovies.databinding.FragmentMovieDetailsBinding
-import com.timkwali.tmdmovies.moviescategories.domain.model.Movie
+import com.timkwali.tmdmovies.common.domain.model.Movie
 
 class MovieDetailsFragment : Fragment() {
 
@@ -41,11 +42,10 @@ class MovieDetailsFragment : Fragment() {
 
     private fun setUpViews(movie: Movie) {
         binding.apply {
-//            val imageUrl = Constants.IMAGE_URL + movie.image
-            val imageUrl = "http://image.tmdb.org/t/p/w500/9Rj8l6gElLpRL7Kj17iZhrT5Zuw.jpg"
+            val imageUrl = Constants.IMAGE_URL + movie.image
             moviePoster.loadImage(imageUrl)
             movieNameTv.text = movie.title
-            ratingTv.text = "${movie.rating}/10.0 TMDB"
+            ratingTv.text = "${movie.rating}${getString(R.string._10_0_tmdb)}"
             genresCg.addChips(genres, false)
             releaseDateTv.text = movie.releaseDate
             languageTv.text = movie.language

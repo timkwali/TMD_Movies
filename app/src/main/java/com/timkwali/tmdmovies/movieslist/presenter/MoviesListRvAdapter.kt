@@ -1,6 +1,5 @@
 package com.timkwali.tmdmovies.movieslist.presenter
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Filter
@@ -10,10 +9,10 @@ import com.timkwali.tmdmovies.common.data.model.genres.Genre
 import com.timkwali.tmdmovies.common.utils.Constants
 import com.timkwali.tmdmovies.common.utils.OnItemClick
 import com.timkwali.tmdmovies.common.utils.Utils.addChips
-import com.timkwali.tmdmovies.common.utils.Utils.genreIdsToGenreNames
 import com.timkwali.tmdmovies.common.utils.Utils.loadImage
 import com.timkwali.tmdmovies.databinding.MoviesListItemBinding
-import com.timkwali.tmdmovies.moviescategories.domain.model.Movie
+import com.timkwali.tmdmovies.common.domain.model.Movie
+import com.timkwali.tmdmovies.common.utils.Utils
 import java.util.*
 
 class MoviesListRvAdapter(
@@ -33,20 +32,17 @@ class MoviesListRvAdapter(
         fun bind(movie: Movie, action: OnItemClick<Movie>) {
             binding.apply {
                 movieNameTv.text = movie.title
-                ratingTv.text = "${movie.rating}/10.0 TMDB"
+                ratingTv.text = "${movie.rating}/10.0 IMDB"
                 releaseDateTv.text = movie.releaseDate
 
                 val imageUrl = Constants.IMAGE_URL + movie.image
                 categoryMovieImageIv.loadImage(imageUrl)
 
-                val idList = movie.genres?.get(0)
-                val genreNames = mutableListOf<String>()
-                genresList.forEach { genre ->
-                    if(idList!!.contains(genre.id.toString())) {
-                        genreNames.add(genre.name.toString())
-                    }
+                movie.genres?.let {
+                    Utils.getGenreNameFromId(it, genresList)
+                }?.let {
+                    genresCg.addChips(it, true)
                 }
-                genresCg.addChips(genreNames, true)
             }
             itemView.setOnClickListener {
                 action.onItemClick(movie, adapterPosition)

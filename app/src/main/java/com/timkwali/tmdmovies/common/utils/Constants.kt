@@ -20,4 +20,6 @@ object Constants {
     const val MOVIE_BUNDLE_KEY = "movie"
     const val GENRES_BUNDLE_KEY = "genres"
     const val MOVIE_TYPE_BUNDLE_KEY = "movieType"
+
+    const val SPLASH_DURATION: Long = 3000
 }

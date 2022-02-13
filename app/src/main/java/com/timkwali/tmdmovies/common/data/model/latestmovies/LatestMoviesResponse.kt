@@ -19,7 +19,7 @@ data class LatestMoviesResponse(
     @SerializedName("budget")
     val budget: Int?,
     @SerializedName("genres")
-    val genres: List<String>?,
+    val genres: List<Int>?,
     @SerializedName("homepage")
     val homepage: String?,
     @SerializedName("imdb_id")

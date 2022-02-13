@@ -5,12 +5,12 @@
     <string name="popular_movies">Popular Movies</string>
     <string name="upcoming_movies">Upcoming Movies</string>
     <string name="see_more">See more</string>
-    <string name="_10_0_tmdb">/10.0 TMDB</string>
+    <string name="_10_0_tmdb">/10.0 IMDB</string>
     <string name="retry">Retry</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="release_date">Release Date</string>
     <string name="language">Language</string>
     <string name="votes">Votes</string>
     <string name="description">Description</string>
+    <string name="refresh">Refresh</string>
 </resources>

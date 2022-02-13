@@ -3,8 +3,8 @@ package com.timkwali.tmdmovies.common.domain.usecases
 import com.timkwali.tmdmovies.common.data.networkBoundResource
 import com.timkwali.tmdmovies.common.domain.repository.MoviesRepository
 import com.timkwali.tmdmovies.common.utils.Resource
-import com.timkwali.tmdmovies.moviescategories.data.mappers.UpcomingMoviesMapper
-import com.timkwali.tmdmovies.moviescategories.domain.model.Movie
+import com.timkwali.tmdmovies.common.data.mappers.UpcomingMoviesMapper
+import com.timkwali.tmdmovies.common.domain.model.Movie
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject

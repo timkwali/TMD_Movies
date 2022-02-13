@@ -2,23 +2,18 @@ package com.timkwali.tmdmovies.movieslist.presenter
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.LinearLayout
-import android.widget.ProgressBar
-import android.widget.TextView
+import android.view.*
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.core.os.bundleOf
-import androidx.core.view.isEmpty
 import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.timkwali.tmdmovies.R
 import com.timkwali.tmdmovies.common.data.model.genres.Genre
-import com.timkwali.tmdmovies.common.presentation.MoviesViewModel
 import com.timkwali.tmdmovies.common.utils.Constants
 import com.timkwali.tmdmovies.common.utils.MovieType
 import com.timkwali.tmdmovies.common.utils.OnItemClick
@@ -27,8 +22,8 @@ import com.timkwali.tmdmovies.common.utils.Utils.gone
 import com.timkwali.tmdmovies.common.utils.Utils.showSnackBar
 import com.timkwali.tmdmovies.common.utils.Utils.visible
 import com.timkwali.tmdmovies.databinding.FragmentMoviesListBinding
-import com.timkwali.tmdmovies.moviescategories.domain.model.Movie
-import com.timkwali.tmdmovies.moviescategories.presentation.MovieCategoryRvAdapter
+import com.timkwali.tmdmovies.common.domain.model.Movie
+import com.timkwali.tmdmovies.common.utils.Utils.getGenreNameFromId
 import com.timkwali.tmdmovies.movieslist.utils.Utils
 
 class MoviesListFragment : Fragment(), OnItemClick<Movie> {
@@ -38,7 +33,8 @@ class MoviesListFragment : Fragment(), OnItemClick<Movie> {
     private lateinit var movieType: MovieType
     private lateinit var genres: MutableList<Genre>
     private lateinit var adapter: MoviesListRvAdapter
-    private val moviesViewModel: MoviesViewModel by activityViewModels()
+    private lateinit var pageTitle: String
+    private val moviesListViewModel: MoviesListViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -53,29 +49,41 @@ class MoviesListFragment : Fragment(), OnItemClick<Movie> {
         super.onViewCreated(view, savedInstanceState)
         movieType = arguments?.get(Constants.MOVIE_TYPE_BUNDLE_KEY) as MovieType
         genres = arguments?.get(Constants.GENRES_BUNDLE_KEY) as MutableList<Genre>
+        val toolbar: Toolbar = view.findViewById(R.id.toolbar)
+        setHasOptionsMenu(true)
+
         binding.apply {
-            when(movieType) {
-                MovieType.LATEST -> {
-                    titleTv.text = getString(R.string.latest_movies)
-                    moviesViewModel.latestMovies.observe(viewLifecycleOwner, { handleResponse(it) })
-                }
-                MovieType.POPULAR -> {
-                    titleTv.text = getString(R.string.popular_movies)
-                    moviesViewModel.popularMovies.observe(viewLifecycleOwner, { handleResponse(it) })
-                }
-                MovieType.UPCOMING -> {
-                    titleTv.text = getString(R.string.upcoming_movies)
-                    moviesViewModel.upcomingMovies.observe(viewLifecycleOwner, { handleResponse(it) })
-                }
+            pageTitle = when(movieType) {
+                MovieType.LATEST -> getString(R.string.latest_movies)
+                MovieType.POPULAR -> getString(R.string.popular_movies)
+                MovieType.UPCOMING -> getString(R.string.upcoming_movies)
             }
-            moviesViewModel.moviesGenres.observe(viewLifecycleOwner, { resource ->
+            moviesListViewModel.getMovies(movieType)
+            moviesListViewModel.moviesList.observe(viewLifecycleOwner, { handleResponse(it) })
+
+//            when(movieType) {
+//                MovieType.LATEST -> {
+//                    pageTitle = getString(R.string.latest_movies)
+//                    moviesViewModel.latestMovies.observe(viewLifecycleOwner, { handleResponse(it) })
+//                }
+//                MovieType.POPULAR -> {
+//                    pageTitle = getString(R.string.popular_movies)
+//                    moviesViewModel.popularMovies.observe(viewLifecycleOwner, { handleResponse(it) })
+//                }
+//                MovieType.UPCOMING -> {
+//                    pageTitle = getString(R.string.upcoming_movies)
+//                    moviesViewModel.upcomingMovies.observe(viewLifecycleOwner, { handleResponse(it) })
+//                }
+//            }
+            moviesListViewModel.moviesGenres.observe(viewLifecycleOwner, { resource ->
                 if(resource is Resource.Error) showSnackBar(resource.message)
                 resource.data.let { genreList ->
                     genres.clear()
                     genreList?.forEach { genres.add(it) }
                 }
             })
-            backBtn.setOnClickListener { findNavController().popBackStack() }
+            setupToolbar(toolbar, pageTitle)
+            moviesListRetryTv.setOnClickListener { refresh() }
         }
     }
 
@@ -86,7 +94,7 @@ class MoviesListFragment : Fragment(), OnItemClick<Movie> {
             when(resource) {
                 is Resource.Loading -> {
                     moviesListRetryLl.gone()
-                    moviesListPb.isVisible = moviesListRv.isEmpty()
+                    moviesListPb.isVisible = moviesListRv.adapter?.itemCount == 0
                 }
                 is Resource.Success -> {
                     moviesListRetryLl.gone()
@@ -94,7 +102,7 @@ class MoviesListFragment : Fragment(), OnItemClick<Movie> {
                 }
                 is Resource.Error -> {
                     if(resource.data?.isNotEmpty() == true) moviesListRetryLl.gone()
-                    if(moviesListRv.childCount == 0) {
+                    if(moviesListRv.adapter?.itemCount == 0) {
                         moviesListRetryLl.visible()
                         moviesListErrorTv.text = resource.message
                     } else showSnackBar(resource.message)
@@ -115,18 +123,53 @@ class MoviesListFragment : Fragment(), OnItemClick<Movie> {
     }
 
     override fun onItemClick(item: Movie, position: Int) {
-        val movieGenres = mutableListOf<String>()
-        val itemGenre = item.genres?.get(0)
-        genres.forEach { genre ->
-            if(itemGenre!!.contains(genre.id.toString())) {
-                movieGenres.add(genre.name.toString())
-            }
+        val genreNames = item.genres?.let {
+            getGenreNameFromId(it, genres)
         }
         val bundle = bundleOf(
             Constants.MOVIE_BUNDLE_KEY to item,
-            Constants.GENRES_BUNDLE_KEY to movieGenres
+            Constants.GENRES_BUNDLE_KEY to genreNames
         )
         findNavController().navigate(R.id.movieDetailsFragment, bundle)
+    }
+
+    private fun setupToolbar(toolbar: Toolbar, title: String) {
+        (activity as AppCompatActivity?)?.setSupportActionBar(toolbar)
+        val actionBar: ActionBar? = (activity as AppCompatActivity?)?.supportActionBar
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true)
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_round_arrow_back_24)
+            toolbar.setNavigationOnClickListener { v: View? -> findNavController().popBackStack() }
+            toolbar.setTitleTextColor(resources.getColor(R.color.black))
+            actionBar.title = title
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.menu_items, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return if (item.itemId == R.id.menu_refresh) {
+            refresh()
+            true
+        } else {
+            super.onOptionsItemSelected(item)
+            false
+        }
+    }
+
+    private fun refresh() {
+        moviesListViewModel.apply {
+            getMoviesGenres()
+            getMovies(movieType)
+//            when(movieType) {
+//                MovieType.LATEST -> getLatestMovies()
+//                MovieType.POPULAR -> getPopularMovies()
+//                MovieType.UPCOMING -> getUpcomingMovies()
+//            }
+        }
     }
 
     override fun onDestroy() {

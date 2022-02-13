@@ -1,4 +1,4 @@
-package com.timkwali.tmdmovies.moviescategories.domain.model
+package com.timkwali.tmdmovies.common.domain.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
@@ -9,7 +9,7 @@ data class Movie(
     val title: String?,
     val rating: Double?,
     val image: String?,
-    val genres: List<String>?,
+    val genres: List<Int>?,
     val releaseDate: String?,
     val voteCount: Int?,
     val language: String?,
