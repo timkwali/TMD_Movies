@@ -1,9 +1,10 @@
 package com.timkwali.tmdmovies.common.utils
 
-import com.timkwali.tmdmovies.common.data.cache.dao.MoviesDao
 import com.timkwali.tmdmovies.common.data.model.genres.Genre
 import com.timkwali.tmdmovies.common.data.model.genres.Genres
 import com.timkwali.tmdmovies.common.data.model.latestmovies.LatestMoviesResponse
+import com.timkwali.tmdmovies.common.data.model.popularmovies.PopularMoviesResponse
+import com.timkwali.tmdmovies.common.data.model.upcomingmovies.UpcomingMoviesResponse
 import com.timkwali.tmdmovies.common.domain.model.Movie
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
@@ -37,11 +38,19 @@ object Constants {
     val genreErrorData: Flow<Resource<List<Genre>>> = flowOf(Resource.Error(errorMessage, null))
 
     val latestMoviesResponse = LatestMoviesResponse(
-        4, false, "", "", 5000000, listOf(12, 14, 45), "https://vimeo.com/658826568",
+        4, false, "", "", 5000000, "https://vimeo.com/658826568",
         "tt18181952", "en", "Late", "\"Charlie (Ewan Gordon) , a student who suffers from anxiety finds out that he's going to be late for a presentation he forgot about.",
         2000, "/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg", listOf(), listOf(), "2021-12-15", 15000000, 6, "Released",
         "A story about anxiety, and how fast it can take over in a moment of panic", "Late", false, 8.3, 200
     )
+
+//    val popularMoviesResponse = PopularMoviesResponse(
+//
+//    )
+//
+//    val upcomingMoviesResponse = UpcomingMoviesResponse(
+//
+//    )
 
     val latestMoviesResponseTitle = latestMoviesResponse.title
 
