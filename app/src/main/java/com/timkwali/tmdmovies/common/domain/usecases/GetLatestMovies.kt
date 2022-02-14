@@ -1,5 +1,6 @@
 package com.timkwali.tmdmovies.common.domain.usecases
 
+import android.util.Log
 import com.timkwali.tmdmovies.common.data.networkBoundResource
 import com.timkwali.tmdmovies.common.domain.repository.MoviesRepository
 import com.timkwali.tmdmovies.common.utils.Resource

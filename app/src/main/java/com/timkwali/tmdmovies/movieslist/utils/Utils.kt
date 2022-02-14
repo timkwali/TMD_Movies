@@ -1,6 +1,5 @@
 package com.timkwali.tmdmovies.movieslist.utils
 
-import android.widget.Adapter
 import androidx.appcompat.widget.SearchView
 import com.timkwali.tmdmovies.movieslist.presenter.MoviesListRvAdapter
 

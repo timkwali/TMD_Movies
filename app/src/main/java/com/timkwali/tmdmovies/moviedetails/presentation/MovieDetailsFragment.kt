@@ -12,7 +12,9 @@ import com.timkwali.tmdmovies.common.utils.Utils.addChips
 import com.timkwali.tmdmovies.common.utils.Utils.loadImage
 import com.timkwali.tmdmovies.databinding.FragmentMovieDetailsBinding
 import com.timkwali.tmdmovies.common.domain.model.Movie
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MovieDetailsFragment : Fragment() {
 
     private var _binding: FragmentMovieDetailsBinding? = null

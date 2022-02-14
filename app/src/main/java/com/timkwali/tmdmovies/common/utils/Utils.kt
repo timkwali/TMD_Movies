@@ -49,7 +49,6 @@ object Utils {
             if(tag.isNotEmpty() && numOfChips < limit) {
                 val newChip = Chip(this.context)
                 newChip.apply {
-//                    chipStrokeWidth = 1F
                     chipStrokeColor = ColorStateList.valueOf(resources.getColor(R.color.blue))
                     chipBackgroundColor = ColorStateList.valueOf(resources.getColor(R.color.light_blue))
                     text = tag

@@ -17,7 +17,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.timkwali.tmdmovies.common.utils.MockTestRunner"
 
         Properties properties = new Properties()
         properties.load(project.rootProject.file('local.properties').newDataInputStream())
@@ -41,6 +41,10 @@ android {
 
     viewBinding {
         enabled = true
+    }
+
+    configurations.all {
+        resolutionStrategy.force 'com.google.code.findbugs:jsr305:3.0.0'
     }
 }
 
@@ -84,6 +88,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation "com.squareup.okhttp3:okhttp:5.0.0-alpha.2"
     implementation "com.squareup.okhttp3:logging-interceptor:4.9.0"
+    implementation "com.github.akarnokd:rxjava3-retrofit-adapter:3.0.0"
 //    implementation group: 'com.squareup.retrofit2', name: 'adapter-rxjava2', version: '2.3.0'
 
     // ViewModel
@@ -94,11 +99,13 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0"
 
     // Hilt
-    implementation 'com.google.dagger:hilt-android:2.38.1'
-    annotationProcessor 'com.google.dagger:hilt-android-compiler:2.37'
-    androidTestAnnotationProcessor 'com.google.dagger:hilt-android-compiler:2.37'
+    implementation 'com.google.dagger:hilt-android:2.35'
+    annotationProcessor 'com.google.dagger:hilt-android-compiler:2.35'
+    androidTestAnnotationProcessor 'com.google.dagger:hilt-android-compiler:2.35'
     androidTestImplementation "com.google.dagger:hilt-android-testing:2.35"
-    kapt "com.google.dagger:hilt-android-compiler:2.37"
+    kapt "com.google.dagger:hilt-android-compiler:2.35"
+    kaptTest 'com.google.dagger:hilt-android-compiler:2.35'
+    kaptAndroidTest "com.google.dagger:hilt-android-compiler:2.35"
 
     //Coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1'

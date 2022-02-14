@@ -52,19 +52,6 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideRetrofitClient(
-        client: OkHttpClient,
-        converterFactory: Converter.Factory
-    ): Retrofit {
-        return Retrofit.Builder()
-            .baseUrl(Constants.BASE_URL)
-            .addConverterFactory(converterFactory)
-            .client(client)
-            .build()
-    }
-
-    @Provides
-    @Singleton
     fun provideMoviesApi(retrofit: Retrofit): MoviesApi {
         return retrofit.create(MoviesApi::class.java)
     }

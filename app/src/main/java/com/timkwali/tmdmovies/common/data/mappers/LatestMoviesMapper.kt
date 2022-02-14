@@ -11,7 +11,7 @@ class LatestMoviesMapper: DomainMapper<LatestMoviesResponse, Movie> {
             title = entity.title,
             rating = entity.voteAverage,
             image = entity.posterPath,
-            genres = entity.genres,
+            genres = emptyList(),
             releaseDate = entity.releaseDate,
             voteCount = entity.voteCount,
             language = entity.originalLanguage,

@@ -1,0 +1,403 @@
+{
+  "dates": {
+    "maximum": "2022-03-08",
+    "minimum": "2022-02-17"
+  },
+  "page": 1,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/1Wlwnhn5sXUIwlxpJgWszT622PS.jpg",
+      "genre_ids": [
+        10751,
+        12,
+        35,
+        14
+      ],
+      "id": 585245,
+      "original_language": "en",
+      "original_title": "Clifford the Big Red Dog",
+      "overview": "As Emily struggles to fit in at home and at school, she discovers a small red puppy who is destined to become her best friend. When Clifford magically undergoes one heck of a growth spurt, becomes a gigantic dog and attracts the attention of a genetics company, Emily and her Uncle Casey have to fight the forces of greed as they go on the run across New York City. Along the way, Clifford affects the lives of everyone around him and teaches Emily and her uncle the true meaning of acceptance and unconditional love.",
+      "popularity": 867.58,
+      "poster_path": "/oifhfVhUcuDjE61V5bS5dfShQrm.jpg",
+      "release_date": "2021-11-10",
+      "title": "Clifford the Big Red Dog",
+      "video": false,
+      "vote_average": 7.3,
+      "vote_count": 999
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/ejgC2lEmuGXiP0A1LvwNezUjNmt.jpg",
+      "genre_ids": [
+        28,
+        12,
+        878
+      ],
+      "id": 406759,
+      "original_language": "en",
+      "original_title": "Moonfall",
+      "overview": "A mysterious force knocks the moon from its orbit around Earth and sends it hurtling on a collision course with life as we know it.",
+      "popularity": 615.622,
+      "poster_path": "/odVv1sqVs0KxBXiA8bhIBlPgalx.jpg",
+      "release_date": "2022-02-03",
+      "title": "Moonfall",
+      "video": false,
+      "vote_average": 6.1,
+      "vote_count": 71
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/oUoFM0f4YFW2jw7AymxUXYvGv7S.jpg",
+      "genre_ids": [
+        28,
+        12
+      ],
+      "id": 335787,
+      "original_language": "en",
+      "original_title": "Uncharted",
+      "overview": "A young street-smart, Nathan Drake and his wisecracking partner Victor “Sully” Sullivan embark on a dangerous pursuit of “the greatest treasure never found” while also tracking clues that may lead to Nathan’s long-lost brother.",
+      "popularity": 573.403,
+      "poster_path": "/nMO3QWa6liTwNWhVICkjzaYfPoH.jpg",
+      "release_date": "2022-02-10",
+      "title": "Uncharted",
+      "video": false,
+      "vote_average": 9,
+      "vote_count": 17
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/koaxq5QbARIlfxCOR89atPHv367.jpg",
+      "genre_ids": [
+        35,
+        10749,
+        10402
+      ],
+      "id": 615904,
+      "original_language": "en",
+      "original_title": "Marry Me",
+      "overview": "Explores the possibilities of what might happen when a superstar marries an average Joe as a joke and discovers that perhaps there are no accidents.",
+      "popularity": 387.013,
+      "poster_path": "/ko1JVbGj4bT8IhCWqjBQ6ZtF2t.jpg",
+      "release_date": "2022-02-09",
+      "title": "Marry Me",
+      "video": false,
+      "vote_average": 7.4,
+      "vote_count": 7
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/56T4lCXrWCFhCeZxArSOXPQIfKc.jpg",
+      "genre_ids": [
+        28,
+        35,
+        99
+      ],
+      "id": 656663,
+      "original_language": "en",
+      "original_title": "Jackass Forever",
+      "overview": "Celebrate the joy of a perfectly executed shot to the groin as Johnny Knoxville, Steve-O and the rest of the gang return alongside some newcomers for one final round of hilarious, wildly absurd and often dangerous displays of stunts and comedy.",
+      "popularity": 298.879,
+      "poster_path": "/ruHDFumJfW7F2vEqTZEQQ9xT7CA.jpg",
+      "release_date": "2022-02-01",
+      "title": "Jackass Forever",
+      "video": false,
+      "vote_average": 6.9,
+      "vote_count": 19
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/4kb7uR1UmXa33U6GB6F9xckFlhn.jpg",
+      "genre_ids": [
+        18,
+        36
+      ],
+      "id": 614917,
+      "original_language": "en",
+      "original_title": "King Richard",
+      "overview": "The story of how Richard Williams served as a coach to his daughters Venus and Serena, who will soon become two of the most legendary tennis players in history.",
+      "popularity": 281.853,
+      "poster_path": "/vjpMd1dsEsVBoUhq6iVHXwwFj9n.jpg",
+      "release_date": "2021-11-18",
+      "title": "King Richard",
+      "video": false,
+      "vote_average": 8.1,
+      "vote_count": 640
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/fuuZFPc8x6gQ8mLGoBp9vrmcQMT.jpg",
+      "genre_ids": [
+        27,
+        53
+      ],
+      "id": 610253,
+      "original_language": "en",
+      "original_title": "Halloween Kills",
+      "overview": "The nightmare isn't over as unstoppable killer Michael Myers escapes from Laurie Strode's trap to continue his ritual bloodbath. Injured and taken to the hospital, Laurie fights through the pain as she inspires residents of Haddonfield, to rise up against Myers. Taking matters into their own hands, the Strode women and other survivors form a vigilante mob to hunt down Michael and end his reign of terror once and for all.",
+      "popularity": 250.88,
+      "poster_path": "/qmJGd5IfURq8iPQ9KF3les47vFS.jpg",
+      "release_date": "2021-10-14",
+      "title": "Halloween Kills",
+      "video": false,
+      "vote_average": 6.8,
+      "vote_count": 1518
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/lRbDyjI7HEaXxflFQbYpqHRGFBJ.jpg",
+      "genre_ids": [
+        9648,
+        80,
+        18
+      ],
+      "id": 505026,
+      "original_language": "en",
+      "original_title": "Death on the Nile",
+      "overview": "Belgian sleuth Hercule Poirot boards a glamorous river steamer with enough champagne to fill the Nile. But his Egyptian vacation turns into a thrilling search for a murderer when a picture-perfect couple’s idyllic honeymoon is tragically cut short.",
+      "popularity": 255.85,
+      "poster_path": "/oT4vRVzulbN72602tTPFCwotl7a.jpg",
+      "release_date": "2022-02-09",
+      "title": "Death on the Nile",
+      "video": false,
+      "vote_average": 6.3,
+      "vote_count": 44
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/myJpOGXMAP7KYURVN92EvtIyLVH.jpg",
+      "genre_ids": [
+        28,
+        80,
+        18
+      ],
+      "id": 414906,
+      "original_language": "en",
+      "original_title": "The Batman",
+      "overview": "In his second year of fighting crime, Batman uncovers corruption in Gotham City that connects to his own family while facing a serial killer known as the Riddler.",
+      "popularity": 231.348,
+      "poster_path": "/3VFI3zbuNhXzx7dIbYdmvBLekyB.jpg",
+      "release_date": "2022-03-01",
+      "title": "The Batman",
+      "video": false,
+      "vote_average": 0,
+      "vote_count": 0
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/3GgkzCDq6KYpcmJmcOKh27hYRyj.jpg",
+      "genre_ids": [
+        12,
+        16,
+        10751,
+        14
+      ],
+      "id": 588921,
+      "original_language": "en",
+      "original_title": "Ainbo: Spirit of the Amazon",
+      "overview": "An epic journey of a young hero and her Spirit Guides, 'Dillo' a cute and humorous armadillo and 'Vaca' a goofy oversized tapir, who embark on a quest to save their home in the spectacular Amazon Rainforest.",
+      "popularity": 203.889,
+      "poster_path": "/l8HyObVj8fPrzacAPtGWWLDhcfh.jpg",
+      "release_date": "2021-02-09",
+      "title": "Ainbo: Spirit of the Amazon",
+      "video": false,
+      "vote_average": 7.2,
+      "vote_count": 276
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/4Tz8V8aRim8cFgKEWprSUjBy8tY.jpg",
+      "genre_ids": [
+        18,
+        10402,
+        10749
+      ],
+      "id": 776503,
+      "original_language": "en",
+      "original_title": "CODA",
+      "overview": "As a CODA (Child of Deaf Adults), Ruby is the only hearing person in her deaf family. When the family's fishing business is threatened, Ruby finds herself torn between pursuing her love of music and her fear of abandoning her parents.",
+      "popularity": 181.394,
+      "poster_path": "/BzVjmm8l23rPsijLiNLUzuQtyd.jpg",
+      "release_date": "2021-08-11",
+      "title": "CODA",
+      "video": false,
+      "vote_average": 8.2,
+      "vote_count": 496
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/t9K8ycUBCplWiICDOKRNRYcEH9e.jpg",
+      "genre_ids": [
+        16,
+        28,
+        12,
+        9648
+      ],
+      "id": 810693,
+      "original_language": "ja",
+      "original_title": "劇場版 呪術廻戦 0",
+      "overview": "Yuta Okkotsu is a nervous high school student who is suffering from a serious problem—his childhood friend Rika has turned into a curse and won't leave him alone. Since Rika is no ordinary curse, his plight is noticed by Satoru Gojo, a teacher at Jujutsu High, a school where fledgling exorcists learn how to combat curses. Gojo convinces Yuta to enroll, but can he learn enough in time to confront the curse that haunts him?",
+      "popularity": 135.76,
+      "poster_path": "/3pTwMUEavTzVOh6yLN0aEwR7uSy.jpg",
+      "release_date": "2021-02-24",
+      "title": "Jujutsu Kaisen 0",
+      "video": false,
+      "vote_average": 7.8,
+      "vote_count": 11
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/ue7p1gBxBZeM9KNtwcUnBzdlRHk.jpg",
+      "genre_ids": [
+        18
+      ],
+      "id": 554230,
+      "original_language": "en",
+      "original_title": "The Lost Daughter",
+      "overview": "A woman's seaside vacation takes a dark turn when her obsession with a young mother forces her to confront secrets from her past.",
+      "popularity": 124.279,
+      "poster_path": "/t1oLNRFixpFOVsyz1HCqCUW3wiW.jpg",
+      "release_date": "2021-12-16",
+      "title": "The Lost Daughter",
+      "video": false,
+      "vote_average": 6.6,
+      "vote_count": 332
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/6UxCO59sdhvp43OCkrYx4EX61J.jpg",
+      "genre_ids": [
+        18
+      ],
+      "id": 766798,
+      "original_language": "es",
+      "original_title": "Madres paralelas",
+      "overview": "Two unmarried women who have become pregnant by accident and are about to give birth meet in a hospital room: Janis, middle-aged, unrepentant and happy; Ana, a teenager, remorseful and frightened.",
+      "popularity": 125.794,
+      "poster_path": "/gDaxYkYNbHuM2VlUazbcpnFZB6d.jpg",
+      "release_date": "2021-10-08",
+      "title": "Parallel Mothers",
+      "video": false,
+      "vote_average": 6.8,
+      "vote_count": 297
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/cFVgXPmF8UMGH67roYd4e3QaAHP.jpg",
+      "genre_ids": [
+        878,
+        28,
+        80,
+        16
+      ],
+      "id": 655431,
+      "original_language": "ja",
+      "original_title": "PSYCHO-PASS サイコパス 3 FIRST INSPECTOR",
+      "overview": "Inspector Kei Mikhail Ignatov finds himself involved with an organization named Bifrost with the possibility of freeing his wife if he betrays Unit One. Koichi Azusawa coordinates an assault on the Public Safety Bureau tower using his hacker Obata, locking down the building and kidnapping Inspector Arata Shindo. Azusawa demands that governor Karina Komiya resign from her position.",
+      "popularity": 113.038,
+      "poster_path": "/m2RzGRMbdMUcp8S3PYtlPpHa83g.jpg",
+      "release_date": "2020-03-27",
+      "title": "Psycho-Pass 3: First Inspector",
+      "video": false,
+      "vote_average": 7.7,
+      "vote_count": 54
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/fOjvX08c9TCLtCZZ4KnRqTCpU37.jpg",
+      "genre_ids": [
+        18,
+        35
+      ],
+      "id": 718032,
+      "original_language": "en",
+      "original_title": "Licorice Pizza",
+      "overview": "The story of Alana Kane and Gary Valentine growing up, running around and going through the treacherous navigation of first love in the San Fernando Valley, 1973.",
+      "popularity": 85.735,
+      "poster_path": "/jD98aUKHQZNAmrk0wQQ9wmNQPnP.jpg",
+      "release_date": "2021-11-26",
+      "title": "Licorice Pizza",
+      "video": false,
+      "vote_average": 7.2,
+      "vote_count": 241
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/rSPw7tgCH9c6NqICZef4kZjFOQ5.jpg",
+      "genre_ids": [
+        18,
+        80
+      ],
+      "id": 238,
+      "original_language": "en",
+      "original_title": "The Godfather",
+      "overview": "Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, his youngest son, Michael steps in to take care of the would-be killers, launching a campaign of bloody revenge.",
+      "popularity": 84.593,
+      "poster_path": "/eEslKSwcqmiNS6va24Pbxf2UKmJ.jpg",
+      "release_date": "1972-03-14",
+      "title": "The Godfather",
+      "video": false,
+      "vote_average": 8.7,
+      "vote_count": 15465
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/voi88IfoNAykXAEd0zrnczNM8LF.jpg",
+      "genre_ids": [
+        18,
+        36,
+        10749
+      ],
+      "id": 454527,
+      "original_language": "fr",
+      "original_title": "Benedetta",
+      "overview": "A 17th-century nun becomes entangled in a forbidden lesbian affair with a novice. But it is Benedetta's shocking religious visions that threaten to shake the Church to its core.",
+      "popularity": 63.201,
+      "poster_path": "/3N39KDnL3d6eP6sGvERPRKyQ8PJ.jpg",
+      "release_date": "2021-07-09",
+      "title": "Benedetta",
+      "video": false,
+      "vote_average": 6.8,
+      "vote_count": 376
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/4KLlHifB1kgMtWl3YnY8JinOj65.jpg",
+      "genre_ids": [
+        18
+      ],
+      "id": 777270,
+      "original_language": "en",
+      "original_title": "Belfast",
+      "overview": "Buddy is a young boy on the cusp of adolescence, whose life is filled with familial love, childhood hijinks, and a blossoming romance. Yet, with his beloved hometown caught up in increasing turmoil, his family faces a momentous choice: hope the conflict will pass or leave everything they know behind for a new life.",
+      "popularity": 77.675,
+      "poster_path": "/3mInLZyPOVLsZRsBwNHi3UJXXnm.jpg",
+      "release_date": "2021-11-11",
+      "title": "Belfast",
+      "video": false,
+      "vote_average": 7.1,
+      "vote_count": 158
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/tULzz524DuvMxnAuQJpo8dk0EvJ.jpg",
+      "genre_ids": [
+        28,
+        53
+      ],
+      "id": 823625,
+      "original_language": "en",
+      "original_title": "Blacklight",
+      "overview": "Travis Block, a shadowy Government agent who specializes in removing operatives whose covers have been exposed, uncovers a deadly conspiracy within his own ranks that reaches the highest echelons of power.",
+      "popularity": 75.937,
+      "poster_path": "/bv9dy8mnwftdY2j6gG39gCfSFpV.jpg",
+      "release_date": "2022-02-10",
+      "title": "Blacklight",
+      "video": false,
+      "vote_average": 4.5,
+      "vote_count": 2
+    }
+  ],
+  "total_pages": 15,
+  "total_results": 282
+}

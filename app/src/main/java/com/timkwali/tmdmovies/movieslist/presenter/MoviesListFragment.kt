@@ -25,7 +25,9 @@ import com.timkwali.tmdmovies.databinding.FragmentMoviesListBinding
 import com.timkwali.tmdmovies.common.domain.model.Movie
 import com.timkwali.tmdmovies.common.utils.Utils.getGenreNameFromId
 import com.timkwali.tmdmovies.movieslist.utils.Utils
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MoviesListFragment : Fragment(), OnItemClick<Movie> {
 
     private var _binding: FragmentMoviesListBinding? = null
@@ -58,30 +60,18 @@ class MoviesListFragment : Fragment(), OnItemClick<Movie> {
                 MovieType.POPULAR -> getString(R.string.popular_movies)
                 MovieType.UPCOMING -> getString(R.string.upcoming_movies)
             }
-            moviesListViewModel.getMovies(movieType)
-            moviesListViewModel.moviesList.observe(viewLifecycleOwner, { handleResponse(it) })
+            moviesListViewModel.apply {
+                getMovies(movieType)
+                moviesList.observe(viewLifecycleOwner, { handleResponse(it) })
+                moviesGenres.observe(viewLifecycleOwner, { resource ->
+                    if(resource is Resource.Error) showSnackBar(resource.message)
+                    resource.data.let { genreList ->
+                        genres.clear()
+                        genreList?.forEach { genres.add(it) }
+                    }
+                })
+            }
 
-//            when(movieType) {
-//                MovieType.LATEST -> {
-//                    pageTitle = getString(R.string.latest_movies)
-//                    moviesViewModel.latestMovies.observe(viewLifecycleOwner, { handleResponse(it) })
-//                }
-//                MovieType.POPULAR -> {
-//                    pageTitle = getString(R.string.popular_movies)
-//                    moviesViewModel.popularMovies.observe(viewLifecycleOwner, { handleResponse(it) })
-//                }
-//                MovieType.UPCOMING -> {
-//                    pageTitle = getString(R.string.upcoming_movies)
-//                    moviesViewModel.upcomingMovies.observe(viewLifecycleOwner, { handleResponse(it) })
-//                }
-//            }
-            moviesListViewModel.moviesGenres.observe(viewLifecycleOwner, { resource ->
-                if(resource is Resource.Error) showSnackBar(resource.message)
-                resource.data.let { genreList ->
-                    genres.clear()
-                    genreList?.forEach { genres.add(it) }
-                }
-            })
             setupToolbar(toolbar, pageTitle)
             moviesListRetryTv.setOnClickListener { refresh() }
         }
@@ -164,11 +154,6 @@ class MoviesListFragment : Fragment(), OnItemClick<Movie> {
         moviesListViewModel.apply {
             getMoviesGenres()
             getMovies(movieType)
-//            when(movieType) {
-//                MovieType.LATEST -> getLatestMovies()
-//                MovieType.POPULAR -> getPopularMovies()
-//                MovieType.UPCOMING -> getUpcomingMovies()
-//            }
         }
     }
 

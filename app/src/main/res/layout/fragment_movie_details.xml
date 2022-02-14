@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".moviedetails.presentation.MovieDetailsFragment">
+    tools:context=".moviedetails.presentation.MovieDetailsFragment"
+    android:id="@+id/movie_details_fragment">
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
