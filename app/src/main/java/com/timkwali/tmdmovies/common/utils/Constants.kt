@@ -6,8 +6,7 @@ import com.timkwali.tmdmovies.BuildConfig
 object Constants {
     const val BASE_URL = "https://api.themoviedb.org/3/"
     const val LANGUAGE = "en-US"
-//    const val API_KEY = BuildConfig.API_KEY
-    const val API_KEY = "6426fc91f9afa2a87ffad670424178ee"
+    const val API_KEY = BuildConfig.API_KEY
     const val IMAGE_URL = "http://image.tmdb.org/t/p/w500"
     const val PAGE_NUMBER = 1
     const val PER_PAGE = 20
